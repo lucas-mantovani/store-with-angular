@@ -1,0 +1,52 @@
+<header class="main-header">
+    <h1 class="main-header__title">
+        <a routerLink="produtos" style="text-decoration: none">
+        <span class="main-header__title--blue">Angular </span><span class="main-header__title--orange">Store</span>
+        </a>
+    </h1>
+    <div class="container-menu">
+        <nav class="main-header__menu">
+            <ul>
+                <li>
+                    <a routerLink="produtos">
+                        <b>Produtos </b>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a routerLink="carrinho"> 
+                        <b>Carrinho</b>
+                        <span *ngIf="carrinhoService.obterCarrinho().length > 0; else carrinhoVazio" class="badge-carrinho">{{carrinhoService.obterCarrinho().length}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="contato">
+                        <b>Contato </b>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <b>Facebook </b>
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <b>Instagram </b>
+                        <i class="fa-brands fa-square-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <b>Twitter </b>
+                        <i class="fa-brands fa-square-twitter"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <app-barra-pesquisa></app-barra-pesquisa>
+    </div>
+</header>
+
+<ng-template #carrinhoVazio><span class="badge-carrinho">0</span>
+</ng-template>
